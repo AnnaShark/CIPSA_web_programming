@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+      var dict = {};
+      s = true;
+
+          while(s == true) {
+            var mes = prompt("Introduce un mes", "");
+            var precip = Number(prompt("Introduce las precipitaciones registradas por el mes", ""));
+            var found = false;
+
+            for(var key in dict){
+                if (key==mes){
+                    dict[mes] = dict[mes] + precip;
+                    var found = true;
+                }
+            }
+
+            if(found == false){
+                dict[mes] = precip;
+            }
+
+            s = confirm("Deseas registrar más precipitaciones?");
+        } 
+
+
+     
+    for (const key in dict) {
+         document.write(key + ' ' + dict[key])
+         document.write("<br>");
+    }
+
+    </script>
+
+	</body>
+</html>
+

@@ -1,0 +1,197 @@
+
+
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.col-nav {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: center;
+  background-color: #F0F0F0;
+  border-top: 2px solid Gainsboro;
+  border-bottom: 2px solid Gainsboro;
+}
+
+.navitem {
+  padding: 10px;
+  color: grey;
+}
+
+.navitem a {
+  text-decoration: none;
+  color: grey;
+}
+
+#sel.navitem a {
+  color: #1E90FF;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.pic{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.col-koko {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background:linear-gradient(#F0F0F0, white);
+  border-top: 2px solid Gainsboro;
+  border-bottom: 2px solid Gainsboro;
+}
+
+.koko1{
+	flex: 1;
+	padding: 10px;
+}
+
+.koko2{
+	flex: 1;
+	padding: 10px;
+	text-align: center;
+
+}
+
+.proj{
+	border: 2px solid Gainsboro;
+}
+
+h1, h2{
+	font-weight: normal;
+	color: #484848;
+}
+
+p{
+	color: #484848;
+}
+
+#sel {
+	color: #1E90FF;
+	text-decoration: none;
+}
+
+.col-row{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  border-bottom: 2px solid Gainsboro;
+}
+
+.cell1{
+	flex: 1;
+	padding: 10px;
+}
+
+.cell2{
+	flex: 1;
+	padding: 10px;
+	border-left: 2px solid Gainsboro;
+}
+
+.button{
+	background-color: #1E90FF;
+	color: white;
+	text-decoration: none;
+	border-radius:50px;
+	padding:7px;
+}
+
+footer{
+	background-color: #F0F0F0;
+	text-align: center;
+	color: #484848;
+	font-size: 0.75em;
+	padding:5px;
+
+}
+
+/*servicios*/
+
+.servicios{
+	width: 70%;
+	margin-left: 20px;
+	margin-right: 20px;	
+}
+
+/*proyectos*/
+
+.col-proyectos{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 2px dotted Gainsboro;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.proyectos h1{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/*contacto*/
+
+.contacto{
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+
+#fname {
+	color: grey;
+	padding: 7px;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 200px;
+  display: inline-block;
+  border: 1px solid Gainsboro;
+  box-sizing: border-box;
+}
+
+textarea{
+	color: grey;
+	border-color: Gainsboro;
+}
+
+
+@media screen and (max-width: 600px) {
+  /* For mobile phones: */
+  [class*="col-"]  {
+	flex-direction: column;
+    align-items: center;
+    
+  }
+  .cell2{
+  	border-left: 0px;
+  }
+
+ .col-row{
+ 	border-bottom: 0px;
+ }
+
+ .servicios{
+ 	width: 100%;
+ }

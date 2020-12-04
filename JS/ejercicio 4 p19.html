@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Colocando código JS</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Ejercicio 4 p19</h1>
+    <script>
+
+    	var mes = prompt("Qur mes es hoy?"); 
+    	var dia = prompt("Que dia es hoy", ""); 
+    	dia = parseInt(dia);
+		var mensaje1 = (mes == "diciembre" && dia == 25 ) ? "Es Navidad" : ""; 
+
+		document.write(mensaje1);
+
+      
+    </script>
+
+	</body>
+</html>

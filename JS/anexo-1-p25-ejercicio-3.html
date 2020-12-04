@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+
+
+		
+		valor1 = Number(prompt("Introduce un valor numerico", ""));
+		while (isNaN(valor1) == true){
+		alert("Error");
+		valor1 = Number(prompt("Introduce un valor numerico", ""));
+		}
+
+		valor2 = Number(prompt("Introduce un valor numerico", ""));
+		while (isNaN(valor2) == true){
+		alert("Error");
+		valor2 = Number(prompt("Introduce un valor numerico", ""));
+		}
+		
+		valor3 = Number(prompt("Introduce un valor numerico", ""));
+		while (isNaN(valor3) == true){
+		alert("Error");
+		valor3 = Number(prompt("Introduce un valor numerico", ""));
+		}
+        
+        confirm("Queres continuar?"); 
+       	avg = (valor1+valor2+valor3)/3;
+
+        document.write("Has introducido 3 valores: " + valor1 + ", " + valor2 + ", "+ valor3+ ". " + "Su media es " + avg + ".");
+
+    </script>
+
+	</body>
+</html>
+

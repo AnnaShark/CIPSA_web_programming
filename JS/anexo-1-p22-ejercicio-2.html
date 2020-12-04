@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>ifelse</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+		
+		input{ 
+			width: 500px;
+			display: flex;
+  			flex-direction: column;
+  			margin:50px;}
+ 		button { 
+			width: 100px;
+			display: flex;
+  			flex-direction: row;
+  			margin:50px;} 		
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Calculadora 2020</h1>
+
+    <input type="text" placeholder="Entra un valor numerico" id="myInput1">
+    
+
+    <input type="text" placeholder="Entra otro valor numerico" id="myInput2">
+   
+
+    <input type="text" placeholder="Entra una operacion matematica (“suma”, “resta”, “producto” o “división”)" id="myInput3">
+   
+
+    <button type="button" onclick="getInputValue();">Submit</button>
+    
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+
+            var input_1 = Number(document.getElementById("myInput1").value);
+            var input_2 = Number(document.getElementById("myInput2").value);
+            var operacion = document.getElementById("myInput3").value;
+            var res;
+
+
+            if (operacion=="suma"){res = input_1+input_2
+            } else if (operacion=="resta"){res = input_1-input_2
+            } else if (operacion=="producto"){res = input_1*input_2
+			} else if (operacion=="division"&& input_2 != 0){res = input_1/input_2
+			} else if (operacion=="division"&& input_2 == 0){res = "División por cero"
+			} else {res = "Operación no válida"}
+
+			alert(res);
+
+         }
+          
+			
+        
+    </script>
+
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>ifelse</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+		
+		input{ 
+			width: 400px;
+			display: flex;
+  			flex-direction: column;
+  			margin:50px;}
+ 		button { 
+			width: 100px;
+			display: flex;
+  			flex-direction: row;
+  			margin:50px;} 		
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Quien es mayor y menor?</h1>
+
+    <input type="text" placeholder="Entra el nombre de la primera persona" id="myInputnombre1">
+    
+
+    <input type="text" placeholder="Entra la edad de la primera persona" id="myInputedad1">
+   
+
+    <input type="text" placeholder="Entra el nombre de la segunda persona" id="myInputnombre2">
+   
+
+    <input type="text" placeholder="Entra la edad de la segunda persona" id="myInputedad2">
+    
+    <input type="text" placeholder="Entra el nombre de la tercera persona" id="myInputnombre3">
+   
+
+    <input type="text" placeholder="Entra la edad de la tercera persona" id="myInputedad3">
+
+    <button type="button" onclick="getInputValue();">Submit</button>
+    
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var nombre_1 = document.getElementById("myInputnombre1").value;
+            var edad_1 = Number(document.getElementById("myInputedad1").value);
+            var nombre_2 = document.getElementById("myInputnombre2").value;
+            var edad_2 = Number(document.getElementById("myInputedad2").value);
+            var nombre_3 = document.getElementById("myInputnombre3").value;
+            var edad_3 = Number(document.getElementById("myInputedad3").value);
+
+            var mayor_ed = Math.max(edad_1, edad_2, edad_3);
+            var mayor_nom
+
+            var menor_ed = Math.min(edad_1, edad_2, edad_3);
+            var menor_nom            
+
+            if (mayor_ed == edad_1){
+            	mayor_nom = nombre_1;
+            } if (mayor_ed == edad_2){
+            	mayor_nom = nombre_2;
+
+            } if (mayor_ed == edad_3){
+            	mayor_nom = nombre_3;
+            }
+
+            if (menor_ed == edad_1){
+            	menor_nom  = nombre_1;
+            } if (menor_ed == edad_2){
+            	menor_nom  = nombre_2;
+
+            } if (menor_ed == edad_3){
+            	menor_nom  = nombre_3;
+            }
+
+            mensaje = mayor_nom + " es el mas mayor y " + menor_nom  + " es el mas joven";
+			alert(mensaje);
+
+         }
+          
+			
+        
+    </script>
+
+	</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        function Usuario( _usuario, _clave ) { 
+            this.usuario = _usuario;
+            this.clave = _clave;
+            this.comprobarUsuario = function( _usu, _cla) {
+                if ( this.usuario == _usu && this.clave == _cla) { 
+                    return true;
+                } else {
+                    return false;
+                } 
+            };
+        }
+
+        var Usuario_1 = new Usuario("roger", 1234);
+        var Usuario_now = new Usuario();
+        var auth = false;
+
+        while (auth == false){
+            Usuario_now.usuario = prompt("Introduce tu nombre", "");
+
+            Usuario_now.clave = Number(prompt("Introduce tu clave", ""));
+
+            var prueba = Usuario_now.comprobarUsuario(Usuario_1.usuario, Usuario_1.clave);
+                if (prueba == true){
+                    alert ("Bienvenido!")
+                    console.log("ldjfsl")
+                    auth = true;
+                } else{
+                    alert ("Error");
+                }
+        }
+
+    </script>
+
+	</body>
+</html>
+

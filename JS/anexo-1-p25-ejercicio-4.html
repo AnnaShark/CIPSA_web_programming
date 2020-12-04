@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+		valor = Number(prompt("Introduce un valor numerico entre 1 y 10", ""));
+		if(valor>10){
+		alert("Error, es mas grande de 10");
+		valor = Number(prompt("Introduce un valor numerico", ""));
+		}
+
+        
+        /*confirm("Queres continuar?"); */
+       	
+        var c = 0;
+
+        for (i=0; i<=10;i++){ 
+        	console.log("slkdjflskjf")
+			answ = Number(prompt("Que es el producto de multiplicacion por " + i + " ?", ""));
+			corr_answ = valor*i;
+			if (answ==corr_answ){
+				alert("CORRECTO");
+				c++;
+			} else{alert(corr_answ);}
+
+		}
+
+		corr_share = (c/10)*100;
+
+        document.write("Has respuesto correctamente a " + corr_share + "% de preguntas.");
+
+    </script>
+
+	</body>
+</html>
+

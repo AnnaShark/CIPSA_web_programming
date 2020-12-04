@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        img { 
+		  position: absolute;
+		  left: 600px;
+		  top: 300px;
+        }
+       button{
+       	margin: 20px;
+       }
+
+    </style>
+	<meta charset="utf-8" />
+ 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 	<script>  
+        
+ 		function mover(dir) {
+ 			switch(dir) {
+  				case "up": 
+  					moveup();
+  					break;
+
+  				case "down": 
+  					movedown();
+  					break;
+
+  				case "left":
+  					moveleft();
+  					break;
+
+  				case "right": 
+  					moveright();
+  					break;
+			}};		
+
+
+		function moveleft() {
+			const img = document.getElementById('imagen');
+			console.log("before l" + img.offsetLeft)
+			if (img.offsetLeft!=0){
+  				img.style.left = `${img.offsetLeft - 1}px`;
+  				console.log("after l" + img.offsetLeft)
+  			}
+  		};
+
+		function moveright() {
+			  const img = document.getElementById('imagen');
+			  console.log("before r" + img.offsetLeft)
+			  console.log("scr" + screen.width)
+			  if (img.offsetLeft < (screen.width-img.width)) {
+			  	img.style.left = `${img.offsetLeft + 1}px`;
+			  	console.log("after r" + img.offsetLeft);
+			  }
+		}
+
+		function moveup() {
+			  const img = document.getElementById('imagen');
+			  console.log("before u" +img.offsetTop)
+			  if (img.offsetTop!=0){
+				  img.style.top = `${img.offsetTop - 1}px`;
+				  console.log("after u" + img.offsetTop)
+			  }
+		}
+
+		function movedown() {
+			  const img = document.getElementById('imagen');
+			  console.log("before d" + img.offsetTop)
+			  console.log("scr" + (screen.height - (2*img.height)))
+			  if (img.offsetTop < (screen.height - (2*img.height))) {
+				  img.style.top = `${img.offsetTop + 1}px`;
+				  console.log("after D" + img.offsetTop)
+			}
+		}	
+
+  	</script>
+</head>
+
+<body>
+    <img id="imagen" src="images/tierra.jpeg" />
+    <br>
+
+	<button id="arriba" on="mover('up')">arriba</button>
+	<br>
+	<button id="abajo" onclick="mover('down')">abajo</button>
+	<br>
+	<button id="izquierda" onclick="mover('left')">izquierda</button>
+	<br>
+	<button id="derecha" onclick="mover('right')">derecha</button>
+
+
+
+</body> 
+
+</html>

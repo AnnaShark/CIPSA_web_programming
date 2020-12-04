@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Colocando código JS</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Ejercicio 3 p19</h1>
+    <script>
+
+    	var nombre1 = prompt("Cual es su nombre?", ""); 
+    	var pass = prompt("Cual es su pass", ""); 
+		var mensaje1 = (nombre1 == "Roger" && pass == "CIPSA" ) ? "Hola" : ""; 
+		var mensaje2 = (nombre1 == "Roger") ? "" : "Usuario no reconocido.";
+		var mensaje3 = (pass == "CIPSA") ? "" : "Contraseña incorrecta";
+		document.write(mensaje1);
+		document.write(mensaje2);
+		document.write(mensaje3);
+      
+    </script>
+
+	</body>
+</html>

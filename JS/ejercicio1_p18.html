@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>ifelse</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+		
+		input{ width: 400px; }
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>el dia de la semana</h1>
+
+    <input type="text" placeholder="Entra el nombre del día de la semana" id="myInput">
+    <button type="button" onclick="getInputValue();">Submit</button>
+    
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("myInput").value;
+            
+            if (inputVal == "sabado" || inputVal == "domingo"){
+            	alert("es festivo");
+            } else{
+            	alert("es laboral");
+            }
+
+         }
+          
+
+
+        
+    </script>
+
+	</body>
+</html>

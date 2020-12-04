@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 35 ejercicios jQuery</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		font-family: Arial, sans-serif;
+	}
+	h2{
+		width: 80%;
+		height: auto;
+		text-align: center;
+		color: white;
+		background-color: blue; 
+
+		margin-left: 10%;
+	}
+	small{
+		border:2px solid tomato;
+		background-color: #FC9;
+	}
+
+	#blog p{
+		display:none;
+	}
+	</style>
+</head>
+<body>
+
+<h2>ANEXO 3 - Pag 35 implementar las siguientes selecciones empleando JQuery:</h2>
+<ul>
+	<li> Seleccionar todos los elementos div que poseen la clase “module”.</li>
+	<li> Seleccionar el tercer ítem de la lista desordenada con id= #myList.</li>
+	<li> Seleccionar el elemento &lt;label&gt; del elemento input utilizando un selector de
+	atributo.</label></li>
+	<li> Averiguar cuantos elementos en la página están ocultos (length).</li>
+	<li> Averiguar cuantas imágenes en la página poseen el atributo alt.</li>
+	<li> Seleccionar todas las filas impares del cuerpo de la tabla.</li>
+</ul>
+<small>
+(*) Para comprobar las selecciones almacenalas en una variable y muéstrala en la consola del
+navegador mediante el comando Console.dir().</small>
+<hr>
+
+
+<div id="blog">
+	<h3>Parrafo 1</h3>
+	<p>En la página se muestra una capa con el identificador “blog”. Esta capa contiene una serie de párrafos encabezados por un elemento seguido de un pequeño párrafo de contenido. Se pide que al hacer click en cada uno de los encabezados se muestre el párrafo correspondiente ocultándose el resto. Por defecto, todos deben permanecer ocultos.</p>
+
+	<h3>Parrafo 2</h3>
+	<p>En la página se muestra una capa con el identificador “blog”. Esta capa contiene una serie de párrafos encabezados por un elemento seguido de un pequeño párrafo de contenido. Se pide que al hacer click en cada uno de los encabezados se muestre el párrafo correspondiente ocultándose el resto. Por defecto, todos deben permanecer ocultos.</p>
+
+	<h3>Parrafo 3</h3>
+	<p>En la página se muestra una capa con el identificador “blog”. Esta capa contiene una serie de párrafos encabezados por un elemento seguido de un pequeño párrafo de contenido. Se pide que al hacer click en cada uno de los encabezados se muestre el párrafo correspondiente ocultándose el resto. Por defecto, todos deben permanecer ocultos.</p>		
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$().ready(function () {
+	
+
+	$("#blog h3").click(function () {
+                 $("#blog p:visible").hide();
+                 $(this).next().show("slow");
+
+             });
+
+
+
+
+
+
+
+
+
+});
+</script>
+</body>
+</html>

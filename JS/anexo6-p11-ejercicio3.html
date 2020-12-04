@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 35 ejercicios jQuery</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		font-family: Arial, sans-serif;
+	}
+
+	#slideshow{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+
+<div>
+
+	<ul id = slides>
+		<li> Fruit</li>
+		<li> Vegetables</li>
+		<li> Bread</li>
+	</ul>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$().ready(function () {
+	
+		/*$("#slideshow li").each(function(index){
+			$( this ).show(1000).delay(1000).hide(1000);
+		})*/
+
+	const slides$ = $('#slides li').hide();
+
+	function showSlide(slide$) {
+	  slides$.fadeOut(10);
+	  slide$.fadeIn(1000);
+	  const next$ = slide$.next();
+	  setTimeout(() => showSlide(next$.length ? next$ : slides$.first()), 1000);
+	}
+
+	showSlide(slides$.first());
+
+
+
+});
+</script>
+</body>
+</html>

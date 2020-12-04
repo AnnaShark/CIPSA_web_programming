@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Colocando código JS</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Ejercicio 6 p19</h1>
+    <script>
+
+    	var num = prompt("Entra el numero de preguntas existentes en un examen de tipo Test"); 
+    	var corr = prompt("Entra cuántas has acertado"); 
+
+    	num = parseInt(num);
+    	corr = parseInt(corr);
+    	nota= corr/num
+
+    	if (nota<=0.2){
+
+			alert("Muy deficiente"); 
+		} 
+
+    	if (nota>0.2 && nota<=0.5 ){
+
+			alert("Insuficiente"); 
+		} 
+
+    	if (nota>0.5 && nota<=0.6 ){
+
+			alert("Suficiente"); 
+		} 
+
+		if (nota>0.6 && nota<=0.7 ){
+
+			alert("Bien"); 
+		} 
+
+		if (nota>0.7 && nota<=0.9 ){
+
+			alert("Notable"); 
+		} 	
+
+		if (nota>0.9 && nota<=1 ){
+
+			alert("Sobresaliente"); 
+		} 			
+
+
+      
+    </script>
+
+	</body>
+</html>

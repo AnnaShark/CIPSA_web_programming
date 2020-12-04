@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+	
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+
+            var input_1 = Number(document.getElementById("myInput1").value);
+            var input_2 = Number(document.getElementById("myInput2").value);
+            var operacion = document.getElementById("myInput3").value;
+            var res;
+
+
+            if (operacion=="suma"){res = input_1+input_2
+            } else if (operacion=="resta"){res = input_1-input_2
+            } else if (operacion=="producto"){res = input_1*input_2
+			} else if (operacion=="division"&& input_2 != 0){res = input_1/input_2
+			} else if (operacion=="division"&& input_2 == 0){res = "División por cero"
+			} else {res = "Operación no válida"}
+
+			alert(res);
+
+         }
+          
+			
+        
+    </script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+var valor;
+// Se solicita el valor al usuario
+valor = prompt("Introduce un valor mayor que 0"); valor = parseInt( valor );
+if (valor>0){
+// Si el valor es mayor que 0 se ejecuta el bucle
+for( var numero = valor; numero >= 0; numero-- ) { document.write(numero + "<br >");
+}
+} else {
+// Si el valor es igual o menor que cero se muestra error. document.write("El valor indicado no es valido");
+}
+</html>

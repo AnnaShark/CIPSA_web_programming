@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        var socios = new Array();
+        s = true;
+
+        while(s == true) {
+            socio = prompt("Introduce un socio", "");
+            socios.push(socio);
+            s = confirm("Queres continuar?");
+        } 
+
+
+        var i;
+        
+        document.write("<table>");
+        for (i = 0; i < socios.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + socios [i] + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        document.write("<br>");
+
+   
+
+        var j;
+        socios.sort();
+        document.write("<table>");
+        for (j = 0; j < socios.length; j++) {
+            document.write("<tr>");
+            document.write("<td>" + socios [j] + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        document.write("<br>");
+
+        document.write("En total son " + socios.length + " socios.");
+
+
+    </script>
+
+	</body>
+</html>
+

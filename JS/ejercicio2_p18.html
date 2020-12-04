@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>ifelse</title>
+		<meta charset="utf-8">
+		<style>
+		body{
+			background : lightgreen;
+			font-family: arial, sans-serif;
+		}
+		
+		h1{
+			font-size : 48px;
+			color : gray;
+			background : #000069;
+		}
+		
+		p{
+			font-size: 24px;
+		}
+		.rojo{
+			color: red;
+		}
+		
+		input{ 
+			width: 400px;
+			display: flex;
+  			flex-direction: column;
+  			margin:50px;}
+ 		button { 
+			width: 100px;
+			display: flex;
+  			flex-direction: row;
+  			margin:50px;} 		
+
+		</style>
+	</head>
+	
+	<body>
+		<h1>Quien es mayor?</h1>
+
+    <input type="text" placeholder="Entra el nombre de la primera persona" id="myInputnombre1">
+    
+
+    <input type="text" placeholder="Entra la edad de la primera persona" id="myInputedad1">
+   
+
+    <input type="text" placeholder="Entra el nombre de la segunda persona" id="myInputnombre2">
+   
+
+    <input type="text" placeholder="Entra la edad de la swfunda persona" id="myInputedad2">
+    <button type="button" onclick="getInputValue();">Submit</button>
+    
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var nombre_1 = document.getElementById("myInputnombre1").value;
+            var edad_1 = Number(document.getElementById("myInputedad1").value);
+            var nombre_2 = document.getElementById("myInputnombre2").value;
+            var edad_2 = Number(document.getElementById("myInputedad2").value);
+
+            
+            if (edad_1 > edad_2){
+            	alert(nombre_1 + " es mayor que " + nombre_2);
+            } if (edad_2 > edad_1){
+            	alert(nombre_2 + " es mayor que " + nombre_1);
+
+            }if (edad_2 == edad_1){
+            	alert("Ambas personas tienen la misma edad");
+            }
+
+         }
+          
+
+
+        
+    </script>
+
+	</body>
+</html>

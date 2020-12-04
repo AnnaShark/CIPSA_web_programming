@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 20 anexo7</title>
+	<meta charset="utf-8">
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 35 ejercicios jQuery</title>
+	<meta charset="utf-8">
+	
+</head>
+<body>
+
+	<form name="miformulario" id="miformulario" method="get">
+	nombre del comprador <input type="text" id="nombre" name="nombre" required>
+	<output class="error" id="err_nombre"></output><br /><br>
+
+	Frutas: <select id='frutas'required>
+			<option value= 0>select an option</option> 
+			<option value='3'>Naranjas</option> 
+			<option value='4.25'>Tomates</option>
+			<option value='2.5'>Manzanas</option>
+			<option value='2.25'>Limones</option>
+			</select><br> <br>
+			<output class="error" id="err_fruta"></output><br><br>
+
+
+			<input type="radio" value="visa" name="visa"required>visa<br> 
+			<input type="radio" value="mastercard" name="mastercard"required>mastercard<br><br>
+
+			peso <input type="number" id="peso" name="peso" min=0 max=10 required><br>
+			<output class="error" id="err_peso"></output><br><br>
+
+			<input id="boton" type="button" value="Calcular">
+			<output class="error" id="err_calc"></output><br>
+    </form>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$().ready(function () {
+
+	var val_n = false;
+	var val_p = false;
+	var val_f = false;
+	
+	$("#nombre").blur(function () {
+		if (this.validity.valueMissing) { 
+			$("#err_nombre").html("No se ha indicado el nombre").show();
+			val_n = false;
+		} else { 
+			$("#err_nombre").html("").hide();
+			val_n = true;
+		} 
+	});
+
+
+	$("#peso").blur(function () {
+        if (this.validity.valueMissing) {
+			$("#err_peso").html("Campo obligatorio").show();
+			this.focus(); // Retiene el foco en el control hasta 
+			val_p = false;
+		} else if (this.validity.rangeUnderflow) {
+			$("#err_peso").html("Peso incorrecto.").show();
+			this.focus(); // Retiene el foco en el control hasta
+			val_p = false; 
+		} else if (this.validity.rangeOverflow) {
+			$("#err_peso").html("Peso incorrecto.").show();
+			this.focus(); // Retiene el foco en el control hasta 
+			val_p = false;
+		} else {
+			$("#err_peso").html("").hide(); }
+			val_p = true;
+	});
+
+
+
+	$("#boton").click(function () {
+		if ($("#frutas option:selected").val() == "0") { 
+			$("#err_fruta").html("Debe seleccionar una fruta").show();
+			val_f = false;
+		} else { 
+			$("#err_fruta").html("").hide();
+			val_f = true;
+		} 
+
+		if(val_n == true && val_p == true && val_f == true){
+
+			var peso = parseFloat($("#peso").val())
+			var price = parseFloat($("#frutas option:selected").val())
+			var res = peso * price
+			console.log("peso " + peso)
+			console.log("price " + price)
+
+
+			if (peso > 5){
+				if($("input:radio:checked").val() == "visa"){
+					console.log("visa")
+					console.log("peso " + peso)
+					console.log("price " + price)
+					res = res * 0.96
+
+				} else if($("input:radio:checked").val() == "mastercard"){
+					console.log("master")
+					console.log("peso " + peso)
+					console.log("price " + price)
+					res = res * 0.975
+				}
+			}
+
+			console.log(res)
+			document.write("Por favor paga " + res + " euros")
+			
+		} else { 
+			
+			$("#err_calc").html("No has entrado los datos obligatorios").show();
+			
+		} 
+	});
+
+
+});
+</script>
+</body>
+</html>

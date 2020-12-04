@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        var al_n = Number(prompt("Cuantos son alumnos?", ""));
+
+
+
+        var nombres = new Array();
+        var notas = new Array();
+        
+        i = 0;
+
+        while(i <= al_n-1) {
+            var nombre = prompt("Introduce el nombre", "");
+            nombres[i] = nombre;
+            var nota = Number(prompt("Introduce la calificacion final", ""));
+            notas[i] = nota;
+            i++;
+        } 
+   
+        var m_nota = Math.max.apply(Math, notas);
+        var indice = notas.indexOf(m_nota);
+        var m_alumno = nombres[indice];
+
+        document.write("Mejor alumno es " + m_alumno);
+        document.write("<br>");
+
+        j = 0;
+        var sum = 0
+        while(j <= al_n-1) {
+            sum = sum + notas[j];
+            j++;
+        }   
+
+        var avg_nota = sum/notas.length;
+
+        document.write("La media de las notas es " + avg_nota);
+    </script>
+
+	</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        #capa { width: 500px; height: 200px }
+    </style>
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+    <img id="imagen" src="images/tierra.jpeg" />
+    <br>
+
+	<button id="Mercurio">Mercurio</button>
+	<button id="Venus">Venus</button>
+	<button id="Tierra">Tierra</button>
+	<button id="Marte">Marte</button>
+
+ 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 	<script>
+		function handler(ev) {
+			imagines = ["images/mercurio.jpeg", "images/venus.jpeg", "images/tierra.jpeg","images/marte.jpeg"] 
+			$("#imagen").attr('src', imagines[ev.data.imagen]);
+         }
+         
+         $().ready(function () {
+			$("#Mercurio").on("click", { imagen: 0 }, handler); 
+			$("#Venus").on("click", { imagen: 1 }, handler); 
+			$("#Tierra").on("click", { imagen: 2 }, handler);
+			$("#Marte").on("click", { imagen: 3 }, handler);
+		});
+  	</script>
+
+</body> 
+
+</html>

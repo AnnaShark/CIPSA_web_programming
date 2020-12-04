@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 35 ejercicios jQuery</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		font-family: Arial, sans-serif;
+	}
+	h2{
+		width: 80%;
+		height: auto;
+		text-align: center;
+		color: white;
+		background-color: blue; 
+
+		margin-left: 10%;
+	}
+	small{
+		border:2px solid tomato;
+		background-color: #FC9;
+	}
+
+	.current{
+		color: green;
+	}	
+
+	</style>
+</head>
+<body>
+
+<h2>ANEXO 3 - Pag 35 implementar las siguientes selecciones empleando JQuery:</h2>
+<ul>
+	<li> Seleccionar todos los elementos div que poseen la clase “module”.</li>
+	<li> Seleccionar el tercer ítem de la lista desordenada con id= #myList.</li>
+	<li> Seleccionar el elemento &lt;label&gt; del elemento input utilizando un selector de
+	atributo.</label></li>
+	<li> Averiguar cuantos elementos en la página están ocultos (length).</li>
+	<li> Averiguar cuantas imágenes en la página poseen el atributo alt.</li>
+	<li> Seleccionar todas las filas impares del cuerpo de la tabla.</li>
+</ul>
+<small>
+(*) Para comprobar las selecciones almacenalas en una variable y muéstrala en la consola del
+navegador mediante el comando Console.dir().</small>
+<hr>
+
+<div class="module">
+	<h2> First item</h2>
+	<ul id="myList">
+		<li>Fila con Index #0</li>
+		<li>Fila con Index #1</li>
+		<li>Fila con Index #2</li>
+		<li>Fila con Index #3</li>
+	</ul>
+</div>
+
+<div class="module"> 
+	<h2> Second item</h2>
+	<form id="formulario">
+		<label for="hombre">Hombre</label>
+		<input type="radio" name="gender" id="hombre" value="hombre"><br>
+		<label for="mujer">Mujer</label>
+		<input type="radio" name="gender" id="mujer" value="mujer"><br>
+		<label for="otro">Otro</label>
+		<input type="radio" name="gender" id="otro" value="otro"><br><br>
+	</form>
+</div>
+
+<div class="module">
+	<h2> Third item</h2>
+	<table id="myTable" border="1">
+		<tr><td>Celda con Index #0</td></tr>
+		<tr><td>Celda con Index #1</td></tr>
+		<tr><td>Celda con Index #2</td></tr>
+		<tr><td>Celda con Index #3</td></tr>
+	</table>
+</div>
+
+<div class="module">
+	<h2> Forth item</h2>
+	<img src="imagen.jpg" alt="texto" height="200" width="200">
+	<img src="imagen1.jpg" height="200" width="200">
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$().ready(function () {
+	
+	
+	$(".module").css("display","none");
+	
+
+	var navegacion = $("<ul>", {
+                 id: "newUl"
+	})
+	navegacion.insertBefore($("div.module").first())
+
+
+	$(".module h2").each(function(index){
+		$("<li>", {text: $( this ).text(), id: index}).appendTo($("#newUl"));
+		})
+	
+	$('#newUl li').eq(0).addClass("current");
+	$(".module").eq(0).css("display","block");	
+
+    $('#newUl li').click(function() {
+        var index = $(this).index();
+        $('#newUl li').removeClass();
+        $(this).addClass("current");
+        $(".module").css("display","none");
+        $(".module").eq(index).css("display","block");
+       	})	
+
+	/*function itershow(index_click) {
+		$(".module").each(function(index){
+			if ($(this).index() == index_click){
+				$(this).show(); 
+			}
+
+		})		
+	}*/		
+
+    /*$('#newUl li').click(function() {
+        var indexclick = $(this).index();
+        $(this).itershow(indexclick);
+       	})*/
+
+
+    /*$('#newUl li').click(function() {
+        var index = $(this).index();
+        $(".module").eq(index).show();       
+    })*/
+
+
+	/*function myFunction() {
+	  var x = $("dev.module");
+	  if (x.style.display === "none") {
+	    x.style.display = "block";
+	  } else {
+	    x.style.display = "none";
+	  }
+	}*/
+
+
+	/*function create() {
+    var nav = $("<li>", {
+                 text: this.$("h2").val()
+	})
+	nav.appendTo($("#newUl"));
+	}*/
+
+
+
+
+
+
+
+
+});
+</script>
+</body>
+</html>

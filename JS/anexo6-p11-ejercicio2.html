@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pagina 35 ejercicios jQuery</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		font-family: Arial, sans-serif;
+	}
+	h2{
+		width: 80%;
+		height: auto;
+		text-align: center;
+		color: white;
+		background-color: blue; 
+
+		margin-left: 10%;
+	}
+	small{
+		border:2px solid tomato;
+		background-color: #FC9;
+	}
+
+	#nav ul, p{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+
+<h2>ANEXO 3 - Pag 35 implementar las siguientes selecciones empleando JQuery:</h2>
+<ul>
+	<li> Seleccionar todos los elementos div que poseen la clase “module”.</li>
+	<li> Seleccionar el tercer ítem de la lista desordenada con id= #myList.</li>
+	<li> Seleccionar el elemento &lt;label&gt; del elemento input utilizando un selector de
+	atributo.</label></li>
+	<li> Averiguar cuantos elementos en la página están ocultos (length).</li>
+	<li> Averiguar cuantas imágenes en la página poseen el atributo alt.</li>
+	<li> Seleccionar todas las filas impares del cuerpo de la tabla.</li>
+</ul>
+<small>
+(*) Para comprobar las selecciones almacenalas en una variable y muéstrala en la consola del
+navegador mediante el comando Console.dir().</small>
+<hr>
+
+
+<div id="nav">
+	<h3>Resources</h3>
+	<ul >
+		<li> Resource 1</li>
+		<li> Resource 2</li>
+		<li> Resource 3</li>
+
+	</ul>
+
+	<h3>Contact</h3>
+	<p> Barcelona</p>
+
+	<h3>Articles</h3>
+	<p> WIP</p>
+
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+$().ready(function () {
+	
+
+	$("#nav h3").mouseover(function () {
+                 $("#nav p,ul:visible").hide();
+                 $(this).next().show("normal");
+
+             });
+	
+	$("#nav h3").mouseout(function () {
+                 $("#nav p,ul:visible").hide();
+
+             });	
+
+
+
+
+
+
+
+});
+</script>
+</body>
+</html>

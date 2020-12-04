@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        img { 
+		  position: absolute;
+		  left: 600px;
+		  top: 300px;
+        }
+       button{
+       	margin: 20px;
+       }
+
+    </style>
+	<meta charset="utf-8" />
+ 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ 	<script>  
+         
+		function moveleft() {
+			const img = document.getElementById('imagen');
+  			img.style.left = `${img.offsetLeft - 1}px`;
+			};
+
+		function moveright() {
+			  const img = document.getElementById('imagen');
+			  img.style.left = `${img.offsetLeft + 1}px`;
+			}
+
+			function moveup() {
+			  const img = document.getElementById('imagen');
+			  img.style.top = `${img.offsetTop - 1}px`;
+			}
+
+			function movedown() {
+			  const img = document.getElementById('imagen');
+			  img.style.top = `${img.offsetTop + 1}px`;
+			}	
+  	</script>
+</head>
+
+<body>
+    <img id="imagen" src="images/tierra.jpeg" />
+    <br>
+
+	<button id="arriba" onclick="moveup()" >arriba</button>
+	<br>
+	<button id="abajo" onclick="movedown()">abajo</button>
+	<br>
+	<button id="izquierda" onclick="moveleft()"  >izquierda</button>
+	<br>
+	<button id="derecha" onclick="moveright()">derecha</button>
+
+
+
+</body> 
+
+</html>

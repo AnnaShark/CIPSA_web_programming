@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        function Triangulo( _lado1, _lado2, _lado3) { 
+            this.lado1 = _lado1;
+            this.lado2 = _lado2;
+            this.lado3 = _lado3;
+
+            this.esEquilatero = function() {
+                if (this.lado1 == this.lado2 && this.lado3 == this.lado2) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+
+            this.esIsosceles = function() {
+                if (this.lado1 == this.lado2 || this.lado3 == this.lado2 || this.lado1 == this.lado3) {
+                    return true;
+                } else {
+                    return false;}
+            };
+
+            
+            this.esEscaleno = function() {
+                if (this.lado1 != this.lado2 && this.lado3 != this.lado2 && this.lado1 != this.lado3) {
+                    return true;
+                } else {
+                    return false;}
+            };
+
+        }
+
+        var Tr_1 = new Triangulo();
+        
+        Tr_1.lado1 = Number(prompt("Introduce tu lado 1 de tu triangulo", ""));
+        Tr_1.lado2 = Number(prompt("Introduce tu lado 2 de tu triangulo", ""));        
+        Tr_1.lado3 = Number(prompt("Introduce tu lado 3 de tu triangulo", ""));
+
+        var equilatero = Tr_1.esEquilatero();
+        var isoscele = Tr_1.esIsosceles();
+        var escaleno = Tr_1.esEscaleno();
+
+        if(equilatero == true){
+            alert("es equilatero")
+        }
+        if(isoscele == true){
+            alert("es isoscele")
+        }
+        if(escaleno == true){
+            alert("es escaleno")
+        }                
+
+
+    </script>
+
+	</body>
+</html>
+

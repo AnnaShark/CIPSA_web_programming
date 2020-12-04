@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        function Mes( _nombre, _precip) { 
+            this.nombre = _nombre;
+            this.precip = _precip;
+        }    
+
+        function changePrecip( exist_mes, new_precip ) {
+            for (var i in meses) {
+                if (meses[i].mes == exist_mes) {
+                meses[i].precip = meses[i].precip + new_precip;
+                break; //Stop this loop, we found it!
+                }
+            }  
+        }      
+
+        function findMes(value, array) { 
+            var found = false;
+            for(var i = 0; i < array.length; i++) {
+                if (array[i].mes == value) {
+                found = true;
+                break;
+                }
+            }
+        }    
+
+
+        s = true;
+        var meses = new Array();
+
+        var test = new Array();
+        test = ["mayo", "abril"]
+        var test1 = "mayo"
+        findMes(test1, test)
+
+        console.log(findMes(test1, test));
+
+
+        /*while(s == true) {
+            var mes = prompt("Introduce un mes", "");
+            var precip = Number(prompt("Introduce las precipitaciones registradas por el mes", ""));
+
+            if(findMes(mes, meses) == false){
+              meses.push(new Mes(mes, precip));
+              console.log("khkhkjhkjh");
+            } else{
+                changePrecip(mes,precip);
+            }
+
+            s = confirm("Deseas registrar más precipitaciones?");
+        } 
+
+
+        var i;
+        
+        document.write("<table>");
+        for (i = 0; i < meses.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + meses[i].mes + "</td>");
+            document.write("<td>" + meses[i].precip + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");*/
+
+
+    </script>
+
+	</body>
+</html>
+

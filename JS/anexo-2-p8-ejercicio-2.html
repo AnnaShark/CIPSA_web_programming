@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+	
+	<body>
+
+    
+    <script>
+		
+        function ApuestaPrimitiva( _v1, _v2, _v3, _v4, _v5, _v6) { 
+            this.v1 = _v1;
+            this.v2 = _v2;
+            this.v3 = _v3;
+            this.v4 = _v4;
+            this.v5 = _v5;
+            this.v6 = _v6;
+
+            this.contarAciertos = function(_vg1, _vg2, _vg3, _vg4, _vg5, _vg6) {
+                var na = 0;
+                if ( this.v1 == _vg1) {na++;} 
+                if ( this.v2 == _vg2) {na++;}
+                if ( this.v3 == _vg3) {na++;} 
+                if ( this.v4 == _vg4) {na++;} 
+                if ( this.v5 == _vg5) {na++;} 
+                if ( this.v6 == _vg6) {na++;} 
+                return na;
+            };
+        }
+
+        var Apuesta_1 = new ApuestaPrimitiva(1,2,3,4,5,8);
+        alert(Apuesta_1.contarAciertos(1,4,3,6,7,8));
+
+
+
+    </script>
+
+	</body>
+</html>
+
